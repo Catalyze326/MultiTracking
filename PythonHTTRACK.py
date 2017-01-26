@@ -20,7 +20,7 @@ def httrack(link):
     global proc
     print(str(proc))
     print("Running HTTRACK")
-    subprocess.Popen(shlex.split("httrack {} -G1000000 *c8 -EN 300 -%t .css+.js -O {} --disable-security-limits -AN 99999999999".format(link,'output/'+link)))
+    subprocess.Popen(shlex.split("httrack {} -M2000000 -c16 *c8 -EN 300 -%s -N "%t .css+.js" -F "Mozilla 1.0, Sparc, Solaris 23.54.34" -O {} --disable-security-limits -AN 99999999999".format(link,'output/'+link)))
     proc-=1
 proc=0
 for i in links:
